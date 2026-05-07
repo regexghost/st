@@ -88,6 +88,7 @@ static unsigned int cursorthickness = 2;
 const int boxdraw = 1;
 const int boxdraw_bold = 1;
 
+
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 0;
 
@@ -120,32 +121,24 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	[0] = "#1c1b19",
+	[1] = "#ef2f27",
+	[2] = "#519f50",
+	[3] = "#fbb829",
+	[4] = "#2c78bf",
+	[5] = "#e02c6d",
+	[6] = "#0aaeb3",
+	[7] = "#baa67f",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	[8] = "#918175",
+	[9] = "#f75341",
+	[10] = "#98bc37",
+	[11] = "#fed06e",
+	[12] = "#68a8e4",
+	[13] = "#ff5c8f",
+	[14] = "#2be4d0",
+	[15] = "#fce8c3",
 };
 
 
@@ -153,9 +146,9 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 257;
 
 /*
