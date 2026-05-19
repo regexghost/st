@@ -60,7 +60,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 20;
 static double maxlatency = 33;
 
 /*
@@ -122,24 +122,24 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	[0] = "#1c1b19",
-	[1] = "#ef2f27",
-	[2] = "#519f50",
-	[3] = "#fbb829",
-	[4] = "#2c78bf",
-	[5] = "#e02c6d",
-	[6] = "#0aaeb3",
-	[7] = "#baa67f",
+	[0] = "#1b2229",
+	[1] = "#ff6c6b",
+	[2] = "#98be65",
+	[3] = "#ecbe7b",
+	[4] = "#2257a0",
+	[5] = "#c678dd",
+	[6] = "#46d9ff",
+	[7] = "#bbc2cf",
 
 	/* 8 bright colors */
-	[8] = "#918175",
-	[9] = "#f75341",
-	[10] = "#98bc37",
-	[11] = "#fed06e",
-	[12] = "#68a8e4",
-	[13] = "#ff5c8f",
-	[14] = "#2be4d0",
-	[15] = "#fce8c3",
+	[8] = "#3f444a",
+	[9] = "#ff6c6b",
+	[10] = "#98be65",
+	[11] = "#ecbe7b",
+	[12] = "#2257a0",
+	[13] = "#c678dd",
+	[14] = "#46d9ff",
+	[15] = "#bbc2cf",
 };
 
 
