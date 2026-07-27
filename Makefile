@@ -25,6 +25,7 @@ $(OBJ): config.h config.mk
 
 st: $(OBJ)
 	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
+	magick -background none /usr/share/icons/Papirus/64x64/apps/utilities-terminal.svg st.png
 
 clean:
 	rm -f config.h st $(OBJ) st-$(VERSION).tar.gz
@@ -48,10 +49,13 @@ install: st
 	@echo Please see the README file regarding the terminfo entry of st.
 	mkdir -p $(DESTDIR)$(APPPREFIX)
 	cp -f st.desktop $(DESTDIR)$(APPPREFIX)
+	mkdir -p $(DESTDIR)$(ICONPREFIX)
+	[ -f $(ICONNAME) ] && cp -f $(ICONNAME) $(DESTDIR)$(ICONPREFIX) || :
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/st
 	rm -f $(DESTDIR)$(APPPREFIX)/st.desktop
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
+	rm -f $(DESTDIR)$(ICONPREFIX)/$(ICONNAME)
 
 .PHONY: all clean dist install uninstall
