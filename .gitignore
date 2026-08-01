@@ -1,7 +1,7 @@
 *.rej
 *.orig
 *.o
-st
-patches/
-config.h
-st.png
+/st
+/patches/
+/config.h
+/st.png
